@@ -1,3 +1,51 @@
+let startGameBtn = document.querySelector("#startGameBtn");
+// Start Game button event
+startGameBtn.addEventListener("click", function(){
+	// Get both player's name
+	let playername1 = document.getElementById("name1").value;
+	let playername2 = document.getElementById("name2").value;
+	// Check if player name 1 is empty
+	if(playername1 == "")
+	{
+		// Display error message
+		document.getElementById("error").innerHTML = "";
+		document.getElementById("error").innerHTML = "Player Name 1 Required";
+	}
+	// Check if player name 2 is empty
+	else if(playername2 == "")
+	{
+		// Display error message
+		document.getElementById("error").innerHTML = "";
+		document.getElementById("error").innerHTML = "Player Name 2 Required";
+	}
+	// Check if both player's name not empty
+	else
+	{
+		// Hide the error message
+		document.getElementById("error").innerHTML = "";
+		// Hide the player name screen
+		document.getElementById("createGameScreen").style.display = "none";
+		// Display the game screen
+		document.getElementById("gameScreen").style.display = "inline-block";
+		// Display the player's name
+		document.getElementById("pname1").innerHTML = playername1;
+		document.getElementById("pname2").innerHTML = playername2;
+		// Get all memes
+		let memes = document.querySelectorAll(".memes");
+		for(let i = 0; i < memes.length; i++)
+		{
+			// Generate random meme
+			//let randomMeme = allMemes.splice(allMemes.length * Math.random() | 0, 1)[0];
+			let randomIndex = Math.floor(Math.random() * allMemes.length);
+			let randomMeme = allMemes.splice(randomIndex, 1)[0];
+			// Set the random generated meme
+			document.getElementsByClassName("memes")[i].innerHTML += "<img id='"+i+"' src='images/"+randomMeme+".jpg' width='140' height='140' style='display: none;' />";
+		}
+		// Set the player 1 as default turn
+		document.getElementById("player1").classList.add("currentplayer");
+	}
+});
+
 // Matched pair count
 let matchedPair = 0;
 // Array with all memes
