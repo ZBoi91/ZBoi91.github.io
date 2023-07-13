@@ -1,3 +1,10 @@
+// Matched pair count
+let matchedPair = 0;
+// Array with all memes
+let allMemes = ["badluck","blackman","boy","doge","nmjgg","overly","philosoraptor","spiderman","badluck","blackman","boy","doge","nmjgg","overly","philosoraptor","spiderman"];
+// Array to store clicked memes
+let clickedMemes = [];
+
 // gameStart function
 function gameStart()
 {
@@ -7,18 +14,22 @@ function gameStart()
 	for(let i = 0; i < memes.length; i++)
 	{
 		// Generate one random meme from the array
-		let randomMeme = allMemes.splice(allMemes.length * Math.random() | 0, 1)[0];
+		//let randomMeme = allMemes.splice(allMemes.length * Math.random() | 0, 1)[0];
+		//let randomMeme = allMemes[Maths.floor(Math.random() * allMemes.length)];
+		//let randomMeme = Math.floor(Math.random() * (i + i));
+		//allMemes[randomMeme].style.order = i;
+		//allMemes[i].style.order = randomMeme;
+		let randomIndex = Math.floor(Math.random() * allMemes.length);
+		let randomMeme = allMemes.splice(randomIndex, 1)[0];
+
+console.log(randomMeme); // Output the randomly selected meme
+
+
 		// Set the random generated meme image
 		document.getElementsByClassName("memes")[i].innerHTML += "<img id='"+i+"' src='images/"+randomMeme+".jpg' width='130' height='130' style='display: none;' />";
 	}
 }
 
-// Matched pair count
-let matchedPair = 0;
-// Array with all memes
-let allMemes = ["badluck","blackman","boy","doge","nmjgg","overly","philosoraptor","spiderman","badluck","blackman","boy","doge","nmjgg","overly","philosoraptor","spiderman"];
-// Array to store clicked memes
-let clickedMemes = [];
 // Show memes function
 function showMeme(memeid)
 {
