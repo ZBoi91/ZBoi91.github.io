@@ -20,7 +20,7 @@ function gameStart()
 		//allMemes[randomMeme].style.order = i;
 		//allMemes[i].style.order = randomMeme;
 		let randomIndex = Math.floor(Math.random() * allMemes.length);
-		let randomMeme = allMemes.splice(randomIndex, 1);
+		let randomMeme = allMemes.splice(randomIndex, 1)[0];
 		// Set the random generated meme image
 		document.getElementsByClassName("memes")[i].innerHTML += "<img id='"+i+"' src='images/"+randomMeme+".jpg' width='130' height='130' style='display: none;' />";
 	}
