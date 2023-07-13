@@ -21,10 +21,6 @@ function gameStart()
 		//allMemes[i].style.order = randomMeme;
 		let randomIndex = Math.floor(Math.random() * allMemes.length);
 		let randomMeme = allMemes.splice(randomIndex, 1)[0];
-
-console.log(randomMeme); // Output the randomly selected meme
-
-
 		// Set the random generated meme image
 		document.getElementsByClassName("memes")[i].innerHTML += "<img id='"+i+"' src='images/"+randomMeme+".jpg' width='130' height='130' style='display: none;' />";
 	}
