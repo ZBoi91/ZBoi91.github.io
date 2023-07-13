@@ -1,34 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mememory Game</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="box">
-				<div class="numberofclicks"><h2>Number of Clicks : <span id="clicks">0</span></h2></div>
-				<div class="memes" id="memes0" onclick='showMeme(0)'></div>
-				<div class="memes" id="memes1" onclick='showMeme(1)'></div>
-				<div class="memes" id="memes2" onclick='showMeme(2)'></div>
-				<div class="memes" id="memes3" onclick='showMeme(3)'></div>
-				<div class="memes" id="memes4" onclick='showMeme(4)'></div>
-				<div class="memes" id="memes5" onclick='showMeme(5)'></div>
-				<div class="memes" id="memes6" onclick='showMeme(6)'></div>
-				<div class="memes" id="memes7" onclick='showMeme(7)'></div>
-				<div class="memes" id="memes8" onclick='showMeme(8)'></div>
-				<div class="memes" id="memes9" onclick='showMeme(9)'></div>
-				<div class="memes" id="memes10" onclick='showMeme(10)'></div>
-				<div class="memes" id="memes11" onclick='showMeme(11)'></div>
-				<div class="memes" id="memes12" onclick='showMeme(12)'></div>
-				<div class="memes" id="memes13" onclick='showMeme(13)'></div>
-				<div class="memes" id="memes14" onclick='showMeme(14)'></div>
-				<div class="memes" id="memes15" onclick='showMeme(15)'></div>
-				<div class="restart" id="restartScreen">
-					<input type="button" name="Restart" id="Restart" value="Restart" onclick="location.reload();" />
+			<div class="content">
+				<h1>Mememory Game</h1>
+				<div id="createGameScreen" class="creategamescreen">
+					<label for="Name1">Player Name 1</label>
+					<input type="text" class="textinput" name="name1" id="name1" placeholder="Enter Player Name 1" />
+					<label for="Name2">Player Name 2</label>
+					<input type="text" class="textinput" name="name2" id="name2" placeholder="Enter Player Name 2" />
+					<br/>
+					<input type="button" name="submit" id="startGameBtn" class="startGameBtn" value="PLAY NOW!" />
+					<br/>
+					<span id="error"></span>
+				</div>
+				<div id="gameScreen">
+					<div id="players">
+						<div class="players" id="player1" style="margin-right: 5px;">
+							<span id="pname1"></span><br/><span id="scoreP1">0</span>
+						</div>
+						<div class="players" id="player2" style="margin-left: 5px;">
+							<span id="pname2"></span><br/><span id="scoreP2">0</span>
+						</div>
+					</div>
+					<div class="memes" id="memes0" onclick='showMeme(0)'></div>
+					<div class="memes" id="memes1" onclick='showMeme(1)'></div>
+					<div class="memes" id="memes2" onclick='showMeme(2)'></div>
+					<div class="memes" id="memes3" onclick='showMeme(3)'></div>
+					<div class="memes" id="memes4" onclick='showMeme(4)'></div>
+					<div class="memes" id="memes5" onclick='showMeme(5)'></div>
+					<div class="memes" id="memes6" onclick='showMeme(6)'></div>
+					<div class="memes" id="memes7" onclick='showMeme(7)'></div>
+					<div class="memes" id="memes8" onclick='showMeme(8)'></div>
+					<div class="memes" id="memes9" onclick='showMeme(9)'></div>
+					<div class="memes" id="memes10" onclick='showMeme(10)'></div>
+					<div class="memes" id="memes11" onclick='showMeme(11)'></div>
+					<div class="memes" id="memes12" onclick='showMeme(12)'></div>
+					<div class="memes" id="memes13" onclick='showMeme(13)'></div>
+					<div class="memes" id="memes14" onclick='showMeme(14)'></div>
+					<div class="memes" id="memes15" onclick='showMeme(15)'></div>
+					<div id="winresult">
+						<p id="winner"></p>
+						<p><input type='button' name='playagain' class='playagain' onclick='newGame()' value='PLAY AGAIN' style='margin-top: 10px;' /></p>
+					  </div>
 				</div>
 			</div>
 		</div>

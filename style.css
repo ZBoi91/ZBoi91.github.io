@@ -1,3 +1,7 @@
+*
+{
+	box-sizing: border-box;
+}
 body
 {
 	padding: 0;
@@ -13,22 +17,85 @@ body
 .row
 {
 	width: 80%;
-	display: grid;
 	padding: 20px;
+	display: grid;
 	margin: 0 auto;
 }
-.box
+.content
 {
 	width: 600px;
 	margin: 0 auto;
 }
-.numberofclicks
+.content h1
+{
+	text-align: center;
+	margin: 0 auto;
+}
+.creategamescreen
 {
 	text-align: center;
 }
-.numberofclicks h2
+.startGameBtn
 {
-	margin: 0;
+	background: #333;
+	color: #fff;
+	font-size: 24px;
+	cursor: pointer;
+	border: none;
+	padding: 5px 10px;
+}
+#gameScreen
+{
+	display: none;
+}
+#players
+{
+	float: left;
+	width: 100%;
+	margin: 0 5px;
+	position: relative;
+}
+.players
+{
+	width: 290px;
+	float: left;
+	color: #000;
+	text-align: center;
+	font-size: 24px;
+}
+.currentplayer
+{
+	background: #666;
+	color: #fff;
+}
+#winner
+{
+	float: left;
+	width: 100%;
+	position: relative;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+}
+label
+{
+	width: 100%;
+	font-size: 24px;
+	margin: 5px 0 5px 0;
+	display: inline-block;
+}
+.textinput
+{
+	padding: 5px 10px;
+	font-size: 20px;
+	margin: 5px 0 5px 0;
+	width: 50%;
+}
+#error
+{
+	font-size: 24px;
+	font-weight: bold;
+	color: #f00;
 }
 .memes
 {
@@ -44,29 +111,48 @@ body
 {
 	padding: 5px;
 }
-#restartScreen
+#winresult
 {
-	text-align: center;
+	z-index: 100;
+	top: 15%;
+	left: 10%;
+	background: #999;
+	width: 80%;
+	color: #fff;
+	padding: 50px 20px;
 	display: none;
+	margin: 0 auto;
+	min-height: 580px;
+	position: absolute;
+	text-align: center;
 }
-#Restart
+.playagain
 {
-	margin: 10px 0;
-	padding: 5px 10px;
 	background: #000;
-	color: #780a0a;
-	font-size: 20px;
-	font-weight: bold;
+	color: #fff;
 	border: none;
+	padding: 10px;
+	font-size: 20px;
 	cursor: pointer;
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 450px)
+{
 	.row
 	{
-		width: 95%;
+		width: 96%;
 		padding: 20px 5px;
 	}
-	.box
+	.content
+	{
+		width: 100%;
+	}
+	#players
+	{
+		float: none;
+		margin: 0 auto;
+		display: inline-block;
+	}
+	.players
 	{
 		width: 100%;
 	}
@@ -77,58 +163,48 @@ body
 	}
 	.memes img
 	{
-		padding: 2px;
-		width: 86px;
-		height: 86px;
+		padding: 5px;
+		width: 90px;
+		height: 90px;
 	}
 }
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 420px)
+{
 	.row
 	{
-		width: 95%;
+		width: 96%;
 		padding: 20px 5px;
 	}
-	.box
+	.content
 	{
 		width: 100%;
 	}
 	.memes
 	{
-		width: 87px;
-		height: 87px;
+		width: 88px;
+		height: 88px;
 	}
 	.memes img
 	{
-		width: 87px;
-		height: 87px;
+		width: 75px;
+		height: 75px;
 	}
 }
-@media only screen and (max-width: 400px) {
-	.memes
-	{
-		width: 82px;
-		height: 82px;
-	}
-	.memes img
-	{
-		width: 77px;
-		height: 77px;
-	}
-}
-@media only screen and (max-width: 390px) {
-	.memes
-	{
-		width: 80px;
-		height: 80px;
-	}
-}
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 400px)
+{
 	.row
 	{
-		width: 95%;
+		width: 96%;
+	}
+}
+@media only screen and (max-width: 380px)
+{
+	.row
+	{
+		width: 96%;
 		padding: 20px 2px;
 	}
-	.box
+	.content
 	{
 		width: 100%;
 	}
@@ -136,18 +212,6 @@ body
 	{
 		width: 79px;
 		height: 79px;
-	}
-	.memes img
-	{
-		width: 75px;
-		height: 75px;
-	}
-}
-@media only screen and (max-width: 360px) {
-	.memes
-	{
-		width: 75px;
-		height: 75px;
 	}
 	.memes img
 	{
